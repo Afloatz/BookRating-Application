@@ -21,7 +21,7 @@ public class BookCollection {
 		bookCounter++;
 	}
 
-	public Book getBook(int bookIndex) {
+	public Book retrieveBook(int bookIndex) {
 		return books[bookIndex]; // in order to get one Book at a time
 	}
 

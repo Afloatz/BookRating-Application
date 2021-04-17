@@ -58,7 +58,7 @@ public class BookCollectionApp{
 					System.out.println("List of books:");
 					for (int j = 0; j <books.getBookCounter(); j++){ // we use books.getBookCounter() and not the array length method because some elements of the array can be null depending on the number of book entered so far
 						// retrieve the book  
-						book = books.getBook(j);
+						book = books.retrieveBook(j);
 						System.out.println( book.getTitle()+" by "+book.getAuthor() );
 					}
 					if (books.getBookCounter() == 0){
@@ -117,7 +117,7 @@ public class BookCollectionApp{
 						System.out.println("no books entered yet");
 					}
 					for (int j = 0; j <books.getBookCounter(); j++){
-						book = books.getBook(j);
+						book = books.retrieveBook(j);
 						System.out.println( book.getTitle()+" by "+book.getAuthor()+" - average rating: "+book.calculateAverageRating() );
 					}
 					break;
@@ -127,13 +127,13 @@ public class BookCollectionApp{
 						break;
 					}
 
-					Book highest = books.getBook(0);
+					Book highest = books.retrieveBook(0);
 					if ( books.getBookCounter() == 1 && highest.getRatingCounter() == 0 ) {
 						System.out.println("no rating entered yet");
 						break;
 					}
 					for (int j = 0; j <books.getBookCounter(); j++){
-						book = books.getBook(j);
+						book = books.retrieveBook(j);
 						if ( book.calculateAverageRating() > highest.calculateAverageRating() ) {
 							// we found another book with higher rating
 							highest = book;
