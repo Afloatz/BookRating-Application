@@ -35,6 +35,7 @@ public class Book {
 	}
 
 	public int retrieveRating( int ratingIndex ) {
+		//  ratingIndex < ratings.length (here BookCollectionApp makes sure that book.getRatingCounter() < Book.MAX_NUM_RATINGS)
 		return ratings[ratingIndex]; // in order to retrieve one rating at a time
 	}
 

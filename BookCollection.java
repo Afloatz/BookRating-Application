@@ -22,6 +22,7 @@ public class BookCollection {
 	}
 
 	public Book retrieveBook(int bookIndex) {
+		// bookIndex < books.length since BookCollectionApp makes sure that books.getBookCounter() < BookCollection.MAX_NUM_ITEMS
 		return books[bookIndex]; // in order to get one Book at a time
 	}
 
