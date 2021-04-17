@@ -34,8 +34,8 @@ public class Book {
 		ratingCounter++;
 	}
 
-	public int getRating( int ratingIndex ) {
-		return ratings[ratingIndex]; // in order to get one rating at a time
+	public int retrieveRating( int ratingIndex ) {
+		return ratings[ratingIndex]; // in order to retrieve one rating at a time
 	}
 
 	public double getAverageRating(){

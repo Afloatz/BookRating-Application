@@ -105,7 +105,7 @@ public class BookCollectionApp{
 						break;
 					}
 					for (int i=0; i<book.ratingsCount(); i++) {
-						System.out.println( book.getRating(i) );
+						System.out.println( book.retrieveRating(i) );
 					}
 					if (book.ratingsCount() < 1) {
 						System.out.println("this book has no ratings");
