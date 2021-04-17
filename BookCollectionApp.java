@@ -41,7 +41,7 @@ public class BookCollectionApp{
 
 			switch (functionality){				
 				case 1: // Add a book
-					if ( books.size() < BookCollection.MAX_NUM_ITEMS){
+					if ( books.getBookCounter() < BookCollection.MAX_NUM_ITEMS){
 						System.out.print("enter the book title: ");
 						String bookTitle = input.next();
 						input = new Scanner(System.in);
@@ -56,17 +56,17 @@ public class BookCollectionApp{
 					break;
 				case 2: // Display all the books
 					System.out.println("List of books:");
-					for (int j = 0; j <books.size(); j++){ // we use books.size() and not the array length method because some elements of the array can be null depending on the number of book entered so far
+					for (int j = 0; j <books.getBookCounter(); j++){ // we use books.getBookCounter() and not the array length method because some elements of the array can be null depending on the number of book entered so far
 						// retrieve the book  
 						book = books.getBook(j);
 						System.out.println( book.getTitle()+" by "+book.getAuthor() );
 					}
-					if (books.size() == 0){
+					if (books.getBookCounter() == 0){
 						System.out.println("no books entered yet");
 					}
 					break;
 				case 3: // Add a rating for a book
-					if ( books.size() < 1 ){
+					if ( books.getBookCounter() < 1 ){
 						System.out.println("You must first enter a book");
 						break;
 					}
@@ -94,7 +94,7 @@ public class BookCollectionApp{
 					}
 					break;
 				case 4: // Display all the ratings for a given book
-					if ( books.size() < 1 ){
+					if ( books.getBookCounter() < 1 ){
 						System.out.println("You must first enter a book");
 						break;
 					}
@@ -113,26 +113,26 @@ public class BookCollectionApp{
 					break;
 				case 5: // Calculate and display the average rating for each book
 					System.out.println("Average ratings of books:");
-					if ( books.size() == 0 ){
+					if ( books.getBookCounter() == 0 ){
 						System.out.println("no books entered yet");
 					}
-					for (int j = 0; j <books.size(); j++){
+					for (int j = 0; j <books.getBookCounter(); j++){
 						book = books.getBook(j);
 						System.out.println( book.getTitle()+" by "+book.getAuthor()+" - average rating: "+book.calculateAverageRating() );
 					}
 					break;
 				case 6: // Display the best book
-					if ( books.size() == 0 ) {
+					if ( books.getBookCounter() == 0 ) {
 						System.out.println("no books entered yet");
 						break;
 					}
 
 					Book highest = books.getBook(0);
-					if ( books.size() == 1 && highest.getRatingCounter() == 0 ) {
+					if ( books.getBookCounter() == 1 && highest.getRatingCounter() == 0 ) {
 						System.out.println("no rating entered yet");
 						break;
 					}
-					for (int j = 0; j <books.size(); j++){
+					for (int j = 0; j <books.getBookCounter(); j++){
 						book = books.getBook(j);
 						if ( book.calculateAverageRating() > highest.calculateAverageRating() ) {
 							// we found another book with higher rating

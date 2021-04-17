@@ -8,7 +8,7 @@ public class BookCollection {
 	private int bookCounter = 0; // count the number of books entered so far
 
 	// getter
-	public int size() {
+	public int getBookCounter() {
 		return bookCounter;
 	}
 
