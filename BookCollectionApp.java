@@ -80,7 +80,7 @@ public class BookCollectionApp{
 						break;
 					}
 					// check if the user can still enter more ratings for that specific book
-					if ( book.ratingsCount() < Book.MAX_NUM_RATINGS ) {
+					if ( book.getRatingCounter() < Book.MAX_NUM_RATINGS ) {
 						//input with data validation, rating must be between 1 and 5
 						int myRating = 0; // control variable initialisation
 						do {
@@ -104,10 +104,10 @@ public class BookCollectionApp{
 						System.out.println("This book does not exist in our database");
 						break;
 					}
-					for (int i=0; i<book.ratingsCount(); i++) {
+					for (int i=0; i<book.getRatingCounter(); i++) {
 						System.out.println( book.retrieveRating(i) );
 					}
-					if (book.ratingsCount() < 1) {
+					if (book.getRatingCounter() < 1) {
 						System.out.println("this book has no ratings");
 					}
 					break;
@@ -128,7 +128,7 @@ public class BookCollectionApp{
 					}
 
 					Book highest = books.getBook(0);
-					if ( books.size() == 1 && highest.ratingsCount() == 0 ) {
+					if ( books.size() == 1 && highest.getRatingCounter() == 0 ) {
 						System.out.println("no rating entered yet");
 						break;
 					}

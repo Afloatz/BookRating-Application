@@ -48,7 +48,7 @@ public class Book {
 	}
 
 	// getters
-	public int ratingsCount() {
+	public int getRatingCounter() {
 		return ratingCounter;
 	}
 
