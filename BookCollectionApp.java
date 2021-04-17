@@ -118,7 +118,7 @@ public class BookCollectionApp{
 					}
 					for (int j = 0; j <books.size(); j++){
 						book = books.getBook(j);
-						System.out.println( book.getTitle()+" by "+book.getAuthor()+" - average rating: "+book.getAverageRating() );
+						System.out.println( book.getTitle()+" by "+book.getAuthor()+" - average rating: "+book.calculateAverageRating() );
 					}
 					break;
 				case 6: // Display the best book
@@ -134,7 +134,7 @@ public class BookCollectionApp{
 					}
 					for (int j = 0; j <books.size(); j++){
 						book = books.getBook(j);
-						if ( book.getAverageRating() > highest.getAverageRating() ) {
+						if ( book.calculateAverageRating() > highest.calculateAverageRating() ) {
 							// we found another book with higher rating
 							highest = book;
 						}

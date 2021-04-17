@@ -38,7 +38,7 @@ public class Book {
 		return ratings[ratingIndex]; // in order to retrieve one rating at a time
 	}
 
-	public double getAverageRating(){
+	public double calculateAverageRating(){
 		int sum = 0;
 		for (int i = 0; i < ratingCounter; i++){
 			// calculate running sum
